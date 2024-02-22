@@ -118,8 +118,8 @@ func prepareForCustomLobby(lcu *lcu2.LCU) bool {
 	}
 
 	remaining := int(session.Timer.InternalNowInEpochMs-time.Now().UTC().UnixMilli()) + session.Timer.AdjustedTimeLeftInPhase
-	if (session.Timer.Phase == "FINALIZATION") && (remaining < 11000) {
-		log.Fatalf("Необходимо как минимум 11 секунд для краша лобби")
+	if (session.Timer.Phase == "FINALIZATION") && (remaining < 16000) {
+		log.Fatalf("Необходимо как минимум 16 секунд для краша лобби")
 		return false
 	}
 
